@@ -1,0 +1,38 @@
+GET http://localhost:8080/home
+
+###
+GET http://localhost:8080/home/key
+
+###
+GET http://localhost:8080/home/checkExpired
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYW5kaHVAZ21haWwuY29tIiwiaWF0IjoxNjk2MTU5NzMzLCJleHAiOjE2OTYxNTk3OTN9.EVKgVbXiVMJOgpAkForlabVvFAL13sAjTCLNLMdnVY8"
+}
+
+###
+GET http://localhost:8080/home/name
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYW5kaHVAZ21haWwuY29tIiwiaWF0IjoxNjk2MTU5MjA4LCJleHAiOjE2OTYxNTkyNjh9.XZijNJCMXj26hlbspytfPTzKzkk2SVPGL1ZkRVzD-vA"
+}
+
+
+###
+GET http://localhost:8080/home/exp
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYW5kaHVAZ21haWwuY29tIiwiaWF0IjoxNjk2MTU5MjA4LCJleHAiOjE2OTYxNTkyNjh9.XZijNJCMXj26hlbspytfPTzKzkk2SVPGL1ZkRVzD-vA"
+}
+
+
+###
+GET http://localhost:8080/home/claims
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYW5kaHVAZ21haWwuY29tIiwiaWF0IjoxNjk2MTU5MjA4LCJleHAiOjE2OTYxNTkyNjh9.XZijNJCMXj26hlbspytfPTzKzkk2SVPGL1ZkRVzD-vA"
+}

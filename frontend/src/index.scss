@@ -1,0 +1,21 @@
+$main : #9616f2;
+
+.container {
+    padding: 0 2em;
+    text-overflow: ellipsis;
+}
+
+.home {
+    p {
+        margin-top: 2em;
+        word-wrap: break-word;
+    }
+}
+
+.loading {
+    width: 100%;
+    height: 80vh;
+    display: grid;
+    place-items: center;
+    color: $main;
+}
