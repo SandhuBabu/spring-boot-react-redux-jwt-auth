@@ -34,6 +34,7 @@ public class JwtFilter extends OncePerRequestFilter {
             @NonNull HttpServletRequest request,
             @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain) throws ServletException, IOException {
+        System.out.println(request.getRequestURL());
         final String authHeader = request.getHeader("Authorization");
         final String jwt;
         String userEmail = null;
@@ -44,7 +45,6 @@ public class JwtFilter extends OncePerRequestFilter {
         }
 
         jwt = authHeader.substring(7);
-        log.debug("\n\nJWT :: {}\n\n", jwt);
 
         try {
             userEmail = jwtService.extractUsername(jwt);
@@ -64,12 +64,11 @@ public class JwtFilter extends OncePerRequestFilter {
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("JWT EXPIRED");
-            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-            filterChain.doFilter(request, response);
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+//            filterChain.doFilter(request, response);
             return;
         }
         filterChain.doFilter(request, response);
-        return;
     }
 
 }
